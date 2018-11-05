@@ -7,7 +7,10 @@ using namespace std;
 void solve(double meal_cost, int tip_percent, int tax_percent) {
 
     double tip,tax,total_meal_cost;
-    
+    //we cast firstly the tip_percent so when it makes the division the result would be double
+    //if we put casting after the division it would turn it into zero as there is int/int->int
+    //example (20/100)=0 cause int/int->int
+    //but double(20)/100=0.2 cause double/int->double
     tip=meal_cost*(double(tip_percent)/100);
     tax=meal_cost*(double(tax_percent)/100);
     total_meal_cost=round(meal_cost+tax+tip);
