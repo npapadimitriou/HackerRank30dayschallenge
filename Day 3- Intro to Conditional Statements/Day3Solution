@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+
+
+int main()
+{
+    int N;
+    int a,flag=0;
+    cin >> N;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    a=N%2;
+    if(a==0){
+        flag=1;//then even(zigos)
+    } 
+    if (flag==0){
+     cout<<"Weird"<<endl;      
+    }
+    else{//case of odd
+        if(2<=N<=5){
+            cout<<"Not Weird"<<endl;
+        }
+        else if(6<=N<=20){
+             cout<<"Weird"<<endl;
+        }
+        else{
+            cout<<"Not Weird"<<endl;
+        }
+    }
+    return 0;
+}
