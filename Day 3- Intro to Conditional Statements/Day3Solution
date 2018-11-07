@@ -14,14 +14,16 @@ int main()
     if(a==0){
         flag=1;//then even(zigos)
     } 
-    if (flag==0){
+    if (flag==0){//monos
      cout<<"Weird"<<endl;      
     }
-    else{//case of odd
-        if(2<=N<=5){
+    /*For the if statements followinf in C++ you cannot use 6<=N<=20 but you have to use
+    6<=N && N<=20   */
+    else{//case of even
+        if(N<=5){
             cout<<"Not Weird"<<endl;
         }
-        else if(6<=N<=20){
+        else if(N<=20){
              cout<<"Weird"<<endl;
         }
         else{
