@@ -82,9 +82,84 @@ int numberOf1(string input){
     }
     return max;
     
-    
-    
 
-   
     }
     
+/*solution with iterators
+int numberOf1(string input){
+    int count=0;
+    int flagFirst=0; //flag for first iteration if done
+    int max=0;
+    int maxtemp=0;
+    cout<<"inside numberOf1"<<endl;
+   
+        for ( std::string::iterator it=input.begin(); it!=input.end(); ++it){
+        
+       
+       if(flagFirst==0){//first time running
+           if(*it=='1'){
+               count++;
+               max=count;
+               flagFirst++;
+               cout<<"inside first iteration"<<endl;
+           }
+       }//finishes first iteration
+       else{
+           if(*it=='1'){
+               count++;
+             cout<<"inside next iterations"<<endl;
+
+           }
+           else{
+               count=0;
+           }
+       }
+       
+        if(max<count){
+            max=count;
+        }
+    }
+    return max;
+}*/
+
+
+
+/*
+int numberOf1(string input){
+    int count=0;
+    int flagFirst=0; //flag for first iteration if done
+    int max=0;
+    int maxtemp=0;
+   
+       for ( unsigned i=0; i<input.length(); ++i){
+       
+       if(flagFirst==0){//first time running
+           if(input.at(i)='1'){
+               count++;
+               max=count;
+               flagFirst++;
+           }
+       }//finishes first iteration
+       else{
+           if(input.at(i)=='1'){
+               count++;
+           }
+           else{
+               count=0;
+           }
+       }
+       
+        if(max<count){
+            max=count;
+        }
+    }
+    return max;
+}   
+   */
+
+
+
+
+*/
+
+
