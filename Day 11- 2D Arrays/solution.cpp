@@ -30,6 +30,7 @@ int main()
     return 0;
 }
 //check https://www.geeksforgeeks.org/2d-vector-in-cpp-with-user-defined-size/
+//solution works for every 2D vector whatever given dimension 
 int maxHourGlass(vector<vector<int>> myvector){
         int iteration=0;
         int curHourGlass=0;
