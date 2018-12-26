@@ -1,0 +1,67 @@
+#include <iostream>
+#include <cstddef>
+
+using namespace std;	
+
+class Node{
+    public:
+        int data;
+        Node *left;
+        Node *right;
+        Node(int d){
+            data = d;
+            left = NULL;
+            right = NULL;
+        }
+};
+class Solution{
+    public:
+  		Node* insert(Node* root, int data) {
+            if(root == NULL) {
+                return new Node(data);
+            }
+            else {
+                Node* cur;
+                if(data <= root->data){
+                    cur = insert(root->left, data);
+                    root->left = cur;
+                }
+                else{
+                    cur = insert(root->right, data);
+                    root->right = cur;
+               }
+
+               return root;
+           }
+        }
+        int findDepth(Node* x){
+             if(x == NULL) {
+           return -1;
+       }
+       
+       int left = 1 + getHeight(x->left);
+       int right = 1 + getHeight(x->right);
+       
+       if(left>right){
+           return left;
+       }
+       else
+       return right;
+        }
+	int getHeight(Node* x){
+          //Write your code here
+         if(x == NULL) {
+           return -1;
+        }
+       
+       int left = 1 + getHeight(x->left);
+       int right = 1 + getHeight(x->right);
+       
+       if(left>right){
+           return left;
+       }
+       else
+       return right;
+     }
+
+}; //End of Solution
